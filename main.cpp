@@ -61,26 +61,36 @@ const std::unordered_map<char, std::string> ALL_COLOR_CHARS =
 
 int main()
 {
-	std::cout << "Input tetx: ";
-	std::string inputText;
-	std::getline(std::cin, inputText);
-
-	std::string outputString; 
-
-	for (int i = 0; i < inputText.length(); i++) 
+	while (true)
 	{
-		char currChar = inputText.at(i);
-		if (ALL_COLOR_CHARS.find(currChar) != ALL_COLOR_CHARS.end())
-		{
-			outputString += ALL_COLOR_CHARS.at(currChar);
-		}
-		else
-		{
-			outputString += currChar;
-		}
-	}
+		Sleep(10);
 
-	std::cout << outputString << std::endl;
+		std::cout << "Input tetx: ";
+		std::string inputText;
+		std::getline(std::cin, inputText);
+
+		std::string outputString;
+
+		for (int i = 0; i < inputText.length(); i++)
+		{
+			char currChar = inputText.at(i);
+			if (ALL_COLOR_CHARS.find(currChar) != ALL_COLOR_CHARS.end())
+			{
+				outputString += ALL_COLOR_CHARS.at(currChar);
+			}
+			else
+			{
+				outputString += currChar;
+			}
+		}
+
+		std::cout << outputString << std::endl;
+
+		std::cout << std::endl;
+		std::cout << "Press any key to enter new string" << std::endl;
+		system("pause >nul");
+		system("cls");
+	}
 
 	system("pause >nul");
 	return 0;
